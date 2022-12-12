@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+
+    app:cardCornerRadius="20dp"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- date title -->
+            <TextView
+                android:id="@+id/txt_current_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="current date"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="14sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- prev button -->
+            <ImageView
+                android:id="@+id/calendar_prev_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/left_arrow_icon"
+                app:layout_constraintBottom_toBottomOf="@id/txt_current_month"
+                app:layout_constraintStart_toEndOf="@id/txt_current_month"
+                app:layout_constraintTop_toTopOf="@id/txt_current_month" />
+
+            <!-- next button -->
+            <ImageView
+                android:id="@+id/calendar_next_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/right_arrow_icon"
+                app:layout_constraintTop_toTopOf="@id/txt_current_month"
+                app:layout_constraintBottom_toBottomOf="@id/txt_current_month"
+                app:layout_constraintStart_toEndOf="@id/calendar_prev_button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- calendar -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/daysNameRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <!-- calendar -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/calendar_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/daysNameRecycler"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <LinearLayout
+            android:id="@+id/dialogBtnLay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="15dp"
+            android:gravity="end"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calendar_recycler_view"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

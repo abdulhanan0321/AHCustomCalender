@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/dateShapeItem" >
+        <shape >
+            <solid android:color="#40163A64"/>
+            <corners android:bottomLeftRadius="250dp" android:topLeftRadius="250dp"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="oval">
+
+            <solid
+                android:color="@color/blue"/>
+
+        </shape>
+    </item>
+</layer-list>
